@@ -41,13 +41,13 @@ message CreateBriefResponse {
 }
 
 // Campaign
+// repeated string assignment = 4;
+// int32 brief_id = 5;
+// int32 research_metadata_id = 6;
+
 message CreateCampaignRequest {
-  int32 id = 1;
   string name = 2;
   int32 user_id = 3;
-  repeated string assignment = 4;
-  int32 brief_id = 5;
-  int32 research_metadata_id = 6;
 }
 
 message CreateCampaignResponse {
