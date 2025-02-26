@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package research_metadata;
+
+service ResearchMetadataService {
+  rpc CreateResearchMetadata (CreateResearchMetadataRequest) returns (CreateResearchMetadataResponse) {}
+}
+
+message CreateResearchMetadataRequest {
+  int32 id = 1;
+}
+
+message CreateResearchMetadataResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  CreateResearchMetadataRequest research_metadata = 3;
+}
