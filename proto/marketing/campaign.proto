@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package campaign;
+
+service CampaignService {
+  rpc CreateCampaign (CreateCampaignRequest) returns (CreateCampaignResponse) {}
+}
+
+message CreateCampaignRequest {
+  int32 id = 1;
+  string name = 2;
+  int32 user_id = 3;
+  repeated string assignment = 4;
+  int32 brief_id = 5;
+  int32 research_metadata_id = 6;
+}
+
+message CreateCampaignResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  CreateCampaignRequest campaign = 3;
+}
