@@ -23,6 +23,10 @@ message UserRes {
   string name = 2;
   string phone = 3;
   string avatar = 4;
+  string uid = 5;
+  string role = 6;
+  string email_verified_at = 6;
+  string google_id = 6;
 }
 
 message RegisterResponse {
