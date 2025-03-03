@@ -6,6 +6,15 @@ service AuthService {
   rpc Register (RegisterRequest) returns (RegisterResponse) {}
   rpc Login (LoginRequest) returns (LoginResponse) {}
   rpc Validate (ValidateRequest) returns (ValidateResponse) {}
+  rpc Sendmail (SendmailRequest) returns (SendmailResponse) {}
+}
+
+message SendmailRequest {
+  TokenJson data = 1;
+}
+message SendmailResponse {
+  int32 status = 1;
+  repeated string error = 2;
 }
 
 // Register
