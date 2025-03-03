@@ -25,8 +25,8 @@ message UserRes {
   string avatar = 4;
   string uid = 5;
   string role = 6;
-  string email_verified_at = 6;
-  string google_id = 6;
+  string email_verified_at = 7;
+  string google_id = 8;
 }
 
 message RegisterResponse {
