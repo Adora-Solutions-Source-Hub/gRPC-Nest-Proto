@@ -32,7 +32,7 @@ message UserRes {
 message RegisterResponse {
   int32 status = 1;
   repeated string error = 2;
-  UserRes data = 3;
+  optional UserRes data = 3;
 }
 
 message TokenJson {
