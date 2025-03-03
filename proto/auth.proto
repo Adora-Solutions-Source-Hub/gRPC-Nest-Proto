@@ -18,10 +18,17 @@ message RegisterRequest {
   string avatar = 5;
 }
 
+message UserRes {
+  string email = 1;
+  string name = 2;
+  string phone = 3;
+  string avatar = 4;
+}
+
 message RegisterResponse {
   int32 status = 1;
   repeated string error = 2;
-  RegisterRequest data = 3;
+  UserRes data = 3;
 }
 
 message TokenJson {
