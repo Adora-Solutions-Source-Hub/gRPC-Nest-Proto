@@ -19,7 +19,7 @@ message PushNotiResponse {
 }
 
 message SendmailRequest {
-  TokenJson data = 1;
+  string email = 1;
 }
 message SendmailResponse {
   int32 status = 1;
