@@ -1,0 +1,85 @@
+syntax = "proto3";
+
+package auth;
+
+service AuthService {
+  rpc Register (RegisterRequest) returns (RegisterResponse) {}
+  rpc Login (LoginRequest) returns (LoginResponse) {}
+  rpc Validate (ValidateRequest) returns (ValidateResponse) {}
+  rpc Sendmail (SendmailRequest) returns (SendmailResponse) {}
+  rpc PushNoti (PushNotiRequest) returns (PushNotiResponse) {}
+}
+
+message PushNotiRequest {
+  TokenJson data = 1;
+}
+message PushNotiResponse {
+  int32 status = 1;
+  repeated string error = 2;
+}
+
+message SendmailRequest {
+  TokenJson data = 1;
+}
+message SendmailResponse {
+  int32 status = 1;
+  repeated string error = 2;
+}
+
+// Register
+
+message RegisterRequest {
+  string email = 1;
+  string password = 2;
+  string name = 3;
+  string phone = 4;
+  string avatar = 5;
+}
+
+message UserRes {
+  string email = 1;
+  string name = 2;
+  string phone = 3;
+  string avatar = 4;
+  string uid = 5;
+  string role = 6;
+  string email_verified_at = 7;
+  string google_id = 8;
+}
+
+message RegisterResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  optional UserRes data = 3;
+}
+
+message TokenJson {
+  string accessToken = 1;
+  string refreshToken = 2;
+}
+
+// Login
+
+message LoginRequest {
+  string email = 1;
+  string password = 2;
+}
+
+message LoginResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  TokenJson data = 3;
+}
+
+// accessToken, refreshToken
+// Validate
+
+message ValidateRequest {
+  string token = 1;
+}
+
+message ValidateResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  int32 data = 3;
+}

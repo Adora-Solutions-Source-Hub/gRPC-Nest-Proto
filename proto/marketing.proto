@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+package marketing;
+
+service MarketingService {
+  rpc CreateCampaign (CreateCampaignRequest) returns (CreateCampaignResponse) {}
+  rpc CreateBrief (CreateBriefRequest) returns (CreateBriefResponse) {}
+  rpc CreateResearchMetadata (CreateResearchMetadataRequest) returns (CreateResearchMetadataResponse) {}
+}
+// Research Metadata
+message CreateResearchMetadataRequest {
+  int32 id = 1;
+}
+
+message CreateResearchMetadataResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  CreateResearchMetadataRequest research_metadata = 3;
+}
+
+// Brief
+message CreateBriefRequest {
+  string business_domain = 1;
+  string website = 2;
+  string product_name = 3;
+  string market_location = 4;
+  string project_description = 5;
+  string client_name = 6;
+  string brand_name = 7;
+  string campaign_start = 8;
+  string campaign_end = 9;
+  string budget = 10;
+  repeated string target_audience = 11;
+  repeated string competitors = 12;
+  repeated string differentiation = 13;
+  repeated string past_campaign = 14;
+  repeated string additional_requirements = 15;
+  string social_media_link = 16;
+}
+
+message CreateBriefResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  CreateBriefRequest brief = 3;
+}
+
+// Campaign
+// repeated string assignment = 4;
+// int32 brief_id = 5;
+// int32 research_metadata_id = 6;
+
+message CreateCampaignRequest {
+  string name = 1;
+  int32 user_id = 2;
+  CreateBriefRequest brief = 3;
+}
+
+message CreateCampaignResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  CreateCampaignRequest campaign = 3;
+}
