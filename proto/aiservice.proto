@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package aiservice;
 
-service AIService {
+service AiService {
   rpc CreateRoom (CreateRoomRequest) returns (CreateRoomResponse) {}
   rpc CreateHistory (CreateHistoryRequest) returns (CreateHistoryResponse) {}
 }
