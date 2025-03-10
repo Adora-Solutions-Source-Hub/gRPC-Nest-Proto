@@ -6,9 +6,21 @@ service AuthService {
   rpc Register (RegisterRequest) returns (RegisterResponse) {}
   rpc Login (LoginRequest) returns (LoginResponse) {}
   rpc Validate (ValidateRequest) returns (ValidateResponse) {}
+  rpc VerifyOtp (VerifyOtpRequest) returns (VerifyOtpResponse) {}
   rpc Sendmail (SendmailRequest) returns (SendmailResponse) {}
   rpc PushNoti (PushNotiRequest) returns (PushNotiResponse) {}
 }
+
+/// VerifyOtpRequest
+message VerifyOtpRequest {
+  string otp = 1;
+  string type = 2;
+}
+message VerifyOtpResponse {
+  int32 status = 1;
+  string data = 2;
+}
+/// VerifyOtpRequest
 
 message PushNotiRequest {
   TokenJson data = 1;
