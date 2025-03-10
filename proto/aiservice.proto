@@ -9,7 +9,7 @@ service AIService {
 // CreateRoom
 message CreateRoomRequest {
   string name = 1;
-  repeated int member = 2;
+  repeated string member = 2;
 }
 
 message CreateRoomResponse {
@@ -20,7 +20,7 @@ message CreateRoomResponse {
 // CreateHistory
 message CreateHistoryRequest {
   string content = 1;
-  int sender = 2;
+  string sender = 2; //uid
   string type = 3;
   int roomId = 4;
 }
