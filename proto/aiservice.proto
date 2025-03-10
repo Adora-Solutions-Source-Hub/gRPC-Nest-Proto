@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package aiservice;
+
+service AIService {
+  rpc CreateRoom (CreateRoomRequest) returns (CreateRoomResponse) {}
+  rpc CreateHistory (CreateHistoryRequest) returns (CreateHistoryResponse) {}
+}
+// CreateRoom
+message CreateRoomRequest {
+  string name = 1;
+  repeated int member = 2;
+}
+
+message CreateRoomResponse {
+  int32 status = 1;
+  repeated string error = 2;
+}
+
+// CreateHistory
+message CreateHistoryRequest {
+  string content = 1;
+  int sender = 2;
+  string type = 3;
+  int roomId = 4;
+}
+
+message CreateHistoryResponse {
+  int32 status = 1;
+  repeated string error = 2;
+}
