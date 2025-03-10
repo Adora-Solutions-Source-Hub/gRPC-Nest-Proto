@@ -3,9 +3,27 @@ syntax = "proto3";
 package toolsai;
 
 service ToolsaiService {
+  rpc GetModels (GetModelsRequest) returns (GetModelsResponse) {}
   rpc CreateRoom (CreateRoomRequest) returns (CreateRoomResponse) {}
   rpc CreateHistory (CreateHistoryRequest) returns (CreateHistoryResponse) {}
 }
+
+enum EnumClient {
+  openai = 0;
+  ollama = 1;
+  groq = 2;
+  bedrock_aws = 3;
+}
+
+message GetModelsRequest {
+   EnumClient client = 1;
+}
+
+message GetModelsResponse {
+  int32 status = 1;
+  string data = 2;
+}
+
 // CreateRoom
 message CreateRoomRequest {
   string name = 1;
