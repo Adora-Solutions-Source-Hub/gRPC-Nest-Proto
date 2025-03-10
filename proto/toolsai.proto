@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package toolai;
+package toolsai;
 
-service ToolAIService {
+service ToolsaiService {
   rpc CreateRoom (CreateRoomRequest) returns (CreateRoomResponse) {}
   rpc CreateHistory (CreateHistoryRequest) returns (CreateHistoryResponse) {}
 }
