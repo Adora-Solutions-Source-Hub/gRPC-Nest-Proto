@@ -20,7 +20,7 @@ message GetProfileRequest {
 }
 message GetProfileResponse {
   int32 status = 1;
-  GetProfileRequest data = 2;
+  optional UserRes data = 2;
 }
 /// GetProfile
 
