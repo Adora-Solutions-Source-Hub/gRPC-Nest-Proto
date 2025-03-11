@@ -15,6 +15,7 @@ service AuthService {
 /// ForgotPassword
 message ForgotPasswordRequest {
   string mail = 1;
+  string type = 2;
 }
 message ForgotPasswordResponse {
   int32 status = 1;
