@@ -93,8 +93,13 @@ message ValidateRequest {
   string token = 1;
 }
 
+message UserRes {
+  int32 id = 1;
+  string uid = 2;
+}
+
 message ValidateResponse {
   int32 status = 1;
   repeated string error = 2;
-  string data = 3;
+  UserRes user = 3;
 }
