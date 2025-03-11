@@ -15,8 +15,8 @@ service AuthService {
 
 /// ChangePassword
 message ChangePasswordRequest {
-  string old_password = 1;
-  string new_password = 2;
+  string oldPassword = 1;
+  string newPassword = 2;
   int32 userId = 3;
 }
 message ChangePasswordResponse {
