@@ -12,7 +12,19 @@ service AuthService {
   rpc ForgotPassword (ForgotPasswordRequest) returns (ForgotPasswordResponse) {}
   rpc ChangePassword (ChangePasswordRequest) returns (ChangePasswordResponse) {}
   rpc GetProfile (GetProfileRequest) returns (GetProfileResponse) {}
+  rpc ReSendOtp (ReSendOtpRequest) returns (ReSendOtpResponse) {}
 }
+
+/// ReSendOtp
+message ReSendOtpRequest {
+  string email = 1;
+}
+message ReSendOtpResponse {
+  int32 status = 1;
+  string data = 3;
+  string error = 2;
+}
+/// ReSendOtp
 
 /// GetProfile
 message GetProfileRequest {
