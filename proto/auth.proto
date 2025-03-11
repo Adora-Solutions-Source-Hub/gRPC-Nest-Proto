@@ -10,7 +10,19 @@ service AuthService {
   rpc Sendmail (SendmailRequest) returns (SendmailResponse) {}
   rpc PushNoti (PushNotiRequest) returns (PushNotiResponse) {}
   rpc ForgotPassword (ForgotPasswordRequest) returns (ForgotPasswordResponse) {}
+  rpc ChangePassword (ChangePasswordRequest) returns (ChangePasswordResponse) {}
 }
+
+/// ChangePassword
+message ChangePasswordRequest {
+  string oldPassword = 1;
+  string newPassword = 2;
+}
+message ChangePasswordResponse {
+  int32 status = 1;
+  string data = 2;
+}
+/// ForgotPassword
 
 /// ForgotPassword
 message ForgotPasswordRequest {
