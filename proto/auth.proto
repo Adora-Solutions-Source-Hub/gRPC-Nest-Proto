@@ -11,7 +11,18 @@ service AuthService {
   rpc PushNoti (PushNotiRequest) returns (PushNotiResponse) {}
   rpc ForgotPassword (ForgotPasswordRequest) returns (ForgotPasswordResponse) {}
   rpc ChangePassword (ChangePasswordRequest) returns (ChangePasswordResponse) {}
+  rpc GetProfile (GetProfileRequest) returns (GetProfileResponse) {}
 }
+
+/// GetProfile
+message GetProfileRequest {
+  string uid = 1;
+}
+message GetProfileResponse {
+  int32 status = 1;
+  GetProfileRequest data = 2;
+}
+/// GetProfile
 
 /// ChangePassword
 message ChangePasswordRequest {
@@ -23,7 +34,7 @@ message ChangePasswordResponse {
   int32 status = 1;
   string data = 2;
 }
-/// ForgotPassword
+/// ChangePassword
 
 /// ForgotPassword
 message ForgotPasswordRequest {
