@@ -39,6 +39,7 @@ message GetModelsResponse {
 message CreateRoomRequest {
   string name = 1;
   string type = 2;
+  string uid = 3;
 
 }
 
