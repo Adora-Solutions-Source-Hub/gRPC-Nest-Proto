@@ -51,10 +51,9 @@ message CreateRoomResponse {
 
 message CreateRoomRes {
   string id = 1;
-  repeated string member = 2;
-  string last_message = 3;
-  string type = 4;
-  string name = 5;
+  string last_message = 2;
+  string type = 3;
+  string name = 4;
 }
 
 //CreateRoom
