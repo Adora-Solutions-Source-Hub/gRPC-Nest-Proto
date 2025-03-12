@@ -44,7 +44,7 @@ message CreateRoomRequest {
 
 message CreateRoomResponse {
   int32 status = 1;
-  optional CreateRoomRes data = 2
+  optional CreateRoomRes data = 2;
   repeated string error = 3;
 }
 
