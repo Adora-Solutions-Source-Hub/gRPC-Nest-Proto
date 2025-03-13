@@ -7,7 +7,30 @@ service ToolsaiService {
   rpc CreateModels (CreateModelsRequest) returns (CreateModelsResponse) {}
   rpc CreateRoom (CreateRoomRequest) returns (CreateRoomResponse) {}
   rpc CreateHistory (CreateHistoryRequest) returns (CreateHistoryResponse) {}
+  rpc GetRooms (GetRoomsRequest) returns (GetRoomsResponse) {}
 }
+
+//GetRooms
+message GetRoomsRequest {
+  string page = 1;
+  string limit = 2;
+  string search = 3; 
+}
+
+message GetRoomsResponse {
+  int32 status = 1;
+  repeated CreateRoomRes data = 2;
+  optional PaginationResponse = 3;
+  string error = 4;
+}
+
+message PaginationResponse {
+  int32 page = 1;
+  int32 totalPage = 2;
+  int32 limit = 3;
+  int32 total = 4;
+}
+//GetRooms
 
 //CreateModelsRequest
 message CreateModelsRequest {
