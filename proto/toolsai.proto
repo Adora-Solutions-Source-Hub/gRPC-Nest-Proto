@@ -20,7 +20,7 @@ message GetRoomsRequest {
 message GetRoomsResponse {
   int32 status = 1;
   repeated CreateRoomRes data = 2;
-  optional PaginationResponse = 3;
+  optional PaginationResponse pagination = 3;
   string error = 4;
 }
 
