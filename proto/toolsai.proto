@@ -12,8 +12,8 @@ service ToolsaiService {
 
 //GetRooms
 message GetRoomsRequest {
-  string page = 1;
-  string limit = 2;
+  int32 page = 1;
+  int32 limit = 2;
   string search = 3; 
 }
 
