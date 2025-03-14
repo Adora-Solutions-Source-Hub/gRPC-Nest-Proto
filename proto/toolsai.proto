@@ -15,7 +15,7 @@ message GetRoomUserRequest {
   int32 page = 1;
   int32 limit = 2;
   optional string search = 3; 
-  optional string uid = 4;
+  string uid = 4;
 }
 
 message GetRoomUserResponse {
