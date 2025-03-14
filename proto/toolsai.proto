@@ -101,7 +101,7 @@ message CreateHistoryRequest {
   string content = 1;
   string roomId = 2;
   string type = 3;
-  optional string sender = 4;
+  string sender = 4;
 }
 
 message CreateHistoryResponse {
