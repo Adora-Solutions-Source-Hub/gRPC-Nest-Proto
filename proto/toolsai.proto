@@ -32,7 +32,7 @@ message DataGroupRoom {
 
 message DataItem {
   string id = 1;
-  string last_message = 2;
+  string lastMessage = 2;
   repeated string member = 3;
   string type = 4;
   string name = 5;
