@@ -14,8 +14,8 @@ service ToolsaiService {
 message GetRoomsRequest {
   int32 page = 1;
   int32 limit = 2;
-  optional string uid = 3;
-  optional string search = 4; 
+  optional string search = 3; 
+  optional string uid = 4;
 }
 
 message GetRoomsResponse {
