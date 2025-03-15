@@ -15,7 +15,7 @@ service ToolsaiService {
 message GetHistoryChatUserRequest {
   int32 page = 1;
   int32 limit = 2;
-  string uid = 3;
+  string roomId = 3;
 }
 
 message GetHistoryChatUserResponse {
