@@ -8,7 +8,31 @@ service ToolsaiService {
   rpc CreateRoom (CreateRoomRequest) returns (CreateRoomResponse) {}
   rpc CreateHistory (CreateHistoryRequest) returns (CreateHistoryResponse) {}
   rpc GetRoomUser (GetRoomUserRequest) returns (GetRoomUserResponse) {}
+  rpc GetHistoryChatUser (GetHistoryChatUserRequest) returns (GetHistoryChatUserResponse) {}
 }
+
+//GetHistoryChatUser
+message GetHistoryChatUserRequest {
+  int32 page = 1;
+  int32 limit = 2;
+  string uid = 3;
+}
+
+message GetHistoryChatUserResponse {
+  int32 status = 1;
+  repeated DataItemChat data = 2;
+  PaginationResponse pagination = 3;
+  string error = 4;
+}
+
+message DataItemChat {
+  string messageId = 1;
+  string content = 2;
+  string sender = 3;
+  string type = 4;
+  string roomId = 5;
+}
+//GetHistoryChatUser
 
 //GetRoomUser
 message GetRoomUserRequest {
