@@ -5,6 +5,7 @@ package auth;
 service AuthService {
   rpc Register (RegisterRequest) returns (RegisterResponse) {}
   rpc Login (LoginRequest) returns (LoginResponse) {}
+  rpc LoginSocial (LoginSocialRequest) returns (LoginSocialResponse) {}
   rpc Validate (ValidateRequest) returns (ValidateResponse) {}
   rpc VerifyOtp (VerifyOtpRequest) returns (VerifyOtpResponse) {}
   rpc Sendmail (SendmailRequest) returns (SendmailResponse) {}
@@ -14,6 +15,17 @@ service AuthService {
   rpc GetProfile (GetProfileRequest) returns (GetProfileResponse) {}
   rpc ReSendOtp (ReSendOtpRequest) returns (ReSendOtpResponse) {}
 }
+
+/// LoginSocial
+message LoginSocialRequest {
+  string idToken = 1;
+}
+message LoginSocialResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  TokenJson data = 3;
+}
+/// LoginSocial
 
 /// ReSendOtp
 message ReSendOtpRequest {
