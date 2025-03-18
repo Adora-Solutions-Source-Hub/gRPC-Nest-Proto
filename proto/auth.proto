@@ -6,6 +6,7 @@ service AuthService {
   rpc Register (RegisterRequest) returns (RegisterResponse) {}
   rpc Login (LoginRequest) returns (LoginResponse) {}
   rpc LoginSocial (LoginSocialRequest) returns (LoginSocialResponse) {}
+  rpc RefreshToken (RefreshTokenRequest) returns (RefreshTokenResponse) {}
   rpc Validate (ValidateRequest) returns (ValidateResponse) {}
   rpc VerifyOtp (VerifyOtpRequest) returns (VerifyOtpResponse) {}
   rpc Sendmail (SendmailRequest) returns (SendmailResponse) {}
@@ -15,6 +16,17 @@ service AuthService {
   rpc GetProfile (GetProfileRequest) returns (GetProfileResponse) {}
   rpc ReSendOtp (ReSendOtpRequest) returns (ReSendOtpResponse) {}
 }
+
+/// RefreshToken
+message RefreshTokenRequest {
+  string refreshToken = 1;
+}
+message RefreshTokenResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  TokenJson data = 3;
+}
+/// RefreshToken
 
 /// LoginSocial
 message LoginSocialRequest {
