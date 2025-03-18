@@ -5,6 +5,7 @@ package auth;
 service AuthService {
   rpc Register (RegisterRequest) returns (RegisterResponse) {}
   rpc Login (LoginRequest) returns (LoginResponse) {}
+  rpc Logout (LogoutRequest) returns (LogoutResponse) {}
   rpc LoginSocial (LoginSocialRequest) returns (LoginSocialResponse) {}
   rpc RefreshToken (RefreshTokenRequest) returns (RefreshTokenResponse) {}
   rpc Validate (ValidateRequest) returns (ValidateResponse) {}
@@ -16,6 +17,17 @@ service AuthService {
   rpc GetProfile (GetProfileRequest) returns (GetProfileResponse) {}
   rpc ReSendOtp (ReSendOtpRequest) returns (ReSendOtpResponse) {}
 }
+
+/// Logout
+message LogoutRequest {
+  string deviceId = 1;
+}
+message LogoutResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  string data = 3;
+}
+/// Logout
 
 /// RefreshToken
 message RefreshTokenRequest {
@@ -31,6 +43,9 @@ message RefreshTokenResponse {
 /// LoginSocial
 message LoginSocialRequest {
   string idToken = 1;
+  string deviceId = 2;
+  string iAddress = 3;
+  string platForm = 4;
 }
 message LoginSocialResponse {
   int32 status = 1;
@@ -150,6 +165,9 @@ message TokenJson {
 message LoginRequest {
   string email = 1;
   string password = 2;
+  string deviceId = 3;
+  string iAddress = 4;
+  string platForm = 5;
 }
 
 message LoginResponse {
