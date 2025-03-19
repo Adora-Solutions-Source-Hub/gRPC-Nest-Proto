@@ -126,6 +126,7 @@ message CreateHistoryRequest {
   string roomId = 2;
   string type = 3;
   string sender = 4;
+  string typeMessage = 5;
 }
 
 message CreateHistoryResponse {
