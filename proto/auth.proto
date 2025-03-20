@@ -187,7 +187,8 @@ message ValidateRequest {
 message UserValidRes {
   int32 id = 1;
   string uid = 2;
-  string ws_token = 3;
+  string email = 3;
+  string name = 4;
 }
 
 message ValidateResponse {
