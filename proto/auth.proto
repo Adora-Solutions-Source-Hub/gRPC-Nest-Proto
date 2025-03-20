@@ -159,6 +159,7 @@ message RegisterResponse {
 message TokenJson {
   string accessToken = 1;
   string refreshToken = 2;
+  string wsToken = 3;
 }
 
 // Login
@@ -187,8 +188,6 @@ message ValidateRequest {
 message UserValidRes {
   int32 id = 1;
   string uid = 2;
-  string email = 3;
-  string name = 4;
 }
 
 message ValidateResponse {
