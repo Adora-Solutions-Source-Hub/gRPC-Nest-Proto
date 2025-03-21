@@ -43,6 +43,7 @@ message DataItemChat {
   string sender = 3;
   string type = 4;
   string roomId = 5;
+  int32 id= 6;
 }
 //GetHistoryChatUser
 
