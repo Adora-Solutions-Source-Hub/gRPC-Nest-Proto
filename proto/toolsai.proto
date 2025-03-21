@@ -10,15 +10,31 @@ service ToolsaiService {
   rpc GetRoomUser (GetRoomUserRequest) returns (GetRoomUserResponse) {}
   rpc GetHistoryChatUser (GetHistoryChatUserRequest) returns (GetHistoryChatUserResponse) {}
   rpc StopThread (StopThreadRequest) returns (StopThreadResponse) {}
-  rpc deleteRoom (deleteRoomRequest) returns (deleteRoomResponse) {}
+  rpc DeleteRoom (DeleteRoomRequest) returns (DeleteRoomResponse) {}
+  rpc UpdateRoom (UpdateRoomRequest) returns (UpdateRoomResponse) {}
 }
 
-// deleteRoom
-message StopThreadRequest {
+// updateRoom
+message UpdateRoomRequest {
   string roomId = 1;
 }
 
-message deleteRoomResponse {
+message UpdateRoomResponse {
+  int32 status = 1;
+  itemUpdateRoom data = 2;
+  optional string error = 3;
+}
+
+message itemUpdateRoom {
+  string name = 1;
+}
+
+// deleteRoom
+message DeleteRoomRequest {
+  string roomId = 1;
+}
+
+message DeleteRoomResponse {
   int32 status = 1;
   string message = 2;
   optional string error = 3;
